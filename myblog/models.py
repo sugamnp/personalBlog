@@ -9,6 +9,9 @@ class Post(models.Model):
     blog_body = models.CharField(max_length=1000000, default ="")
     blog_created_at = models.DateTimeField(default=datetime.now, blank=True)
     blog_image = models.ImageField(upload_to="static/images/posts" , default ="")
+    blog_feature = models.BooleanField(default="False")
+    editors_choice = models.BooleanField(default="False")
 
     def __str__(self):
         return self.blog_title
+            
