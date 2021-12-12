@@ -122,156 +122,27 @@
                                 <div class="tab-pane fade show active" id="popular" aria-labelledby="popular-tab"
                                     role="tabpanel">
                                     <!-- post  -->
-
+                              {% for post in recent_blogs %}
                                     <div class="post post-list-sm circle">
                                         <div class="thumb circle">
                                             <a href="#">
                                                 <div class="inner">
-                                                    <img src="{{recent_blogs.0.blog_image}}" alt="">
+                                                    <img src="{{post.blog_image}}" alt="">
                                                 </div>
                                             </a>
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">{{recent_blogs.0.blog_title}}</a>
+                                                <a href="#">{{post.blog_title}}</a>
                                             </h6>
                                             <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">{{recent_blogs.0.blog_created_at}}</li>
+                                                <li class="list-inline-item">{{post.blog_created_at}}</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- post2  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{{recent_blogs.1.blog_image}}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">{{recent_blogs.1.blog_title}}</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">{{recent_blogs.1.blog_created_at}}</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post3  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{{recent_blogs.2.blog_image}}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">{{recent_blogs.2.blog_title}}</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">{{recent_blogs.2.blog_created_at}}</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post4  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{{recent_blogs.3.blog_image}}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">{{recent_blogs.3.blog_title}}</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">{{recent_blogs.3.blog_created_at}}</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                  {% endfor %}
                                 </div>
 
-                                <!-- recent  -->
-                                <div class="tab-pane fade" id="recent" aria-labelledby="recent-tab" role="tabpanel">
-                                    <!-- post  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{% static 'images/posts/tabs-2.jpg' %}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">Clubhouse breaking records of many apps</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">24 May 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post2  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{% static 'images/posts/tabs-1.jpg' %}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">At what age you should start investing</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">26 May 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post3  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{% static 'images/posts/tabs-5.jpg' %}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">Sonu sood foundation providing help in COVID-19</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">28 Jun 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post4  -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="#">
-                                                <div class="inner">
-                                                    <img src="{% static 'images/posts/tabs-3.jpg' %}" alt="">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0">
-                                                <a href="#">Should we invest in soverign gold bonds</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">04 Jun 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,7 +192,7 @@
                                             <a href="#">{{editors_pick.0.blog_title}}</a>
                                         </h5>
                                         <p class="excerpt mb-0">
-                                            {{first_editors_body}}
+                                            {{editors_pick.0.blog_body|slice:120}}...
                                         </p>
                                     </div>
                                 </div>
@@ -529,8 +400,7 @@
                                                 </a>
                                             </h5>
                                             <p class="excerpt mb-0">
-                                                This is Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                                                iure.
+                                                {{post.blog_body|slice:90}}...
                                             </p>
                                             <div class="post-bottom clearfix d-flex align-items-center">
                                                 <div class="social-share me-auto">
