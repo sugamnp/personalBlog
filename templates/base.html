@@ -21,24 +21,22 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container-xl">
                     <!-- logo  -->
-                    <a href="{% url 'home' %}" class="navbar-brand">
+                    <a href="{% url 'myblog:home' %}" class="navbar-brand">
                         <img src="{% static 'images/sag.png' %}" alt="">
                     </a>
 
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a href="{% url 'home' %}" class="nav-link">Home</a>
+                                <a href="{% url 'myblog:home' %}" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+                                <a href="{% url 'myblog:blogs' %}" class="nav-link">Blogs</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'aboutus' %}" class="nav-link">About Us</a>
+                                <a href="{% url 'myblog:aboutus' %}" class="nav-link">About Us</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-                            </li>
+
                         </ul>
                     </div>
 
@@ -83,7 +81,7 @@
                         <div class="post featured-post-lg">
                             <div class="details clearfix">
                                 <h2 class="post-title">
-                                    <a href="#">{{ featured_blog_title }}</a>
+                                    <a href="{% url 'myblog:blogdetails' featured_blog.pk %}">{{ featured_blog_title }}</a>
                                 </h2>
                                 <ul class="meta list-inline mb-0">
                                     <li class="list-inline-item">
@@ -133,7 +131,7 @@
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">{{post.blog_title}}</a>
+                                                <a href="{% url 'myblog:blogdetails' post.pk %}">{{post.blog_title}}</a>
                                             </h6>
                                             <ul class="meta list-inline mt-1 mb-0">
                                                 <li class="list-inline-item">{{post.blog_created_at}}</li>
@@ -189,7 +187,7 @@
                                             <li class="list-inline-item">{{editors_pick.0.blog_created_at}}</li>
                                         </ul>
                                         <h5 class="post-title mb-3 mt-3">
-                                            <a href="#">{{editors_pick.0.blog_title}}</a>
+                                            <a href="{% url 'myblog:blogdetails' editors_pick.0.pk%}">{{editors_pick.0.blog_title}}</a>
                                         </h5>
                                         <p class="excerpt mb-0">
                                             {{editors_pick.0.blog_body|slice:120}}...
@@ -207,7 +205,7 @@
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">
+                                                <a href="{% url 'myblog:blogdetails' editors_pick.1.pk %}">
                                                     {{editors_pick.1.blog_title}}
                                                 </a>
                                             </h6>
@@ -226,7 +224,7 @@
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">
+                                                <a href="{% url 'myblog:blogdetails' editors_pick.2.pk%}">
                                                     {{editors_pick.2.blog_title}}
                                                 </a>
                                             </h6>
@@ -245,7 +243,7 @@
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">
+                                                <a href="{% url 'myblog:blogdetails' editors_pick.3.pk %}">
                                                     {{editors_pick.3.blog_title}}
                                                 </a>
                                             </h6>
@@ -264,7 +262,7 @@
                                         </div>
                                         <div class="details clearfix">
                                             <h6 class="post-title my-0">
-                                                <a href="#">
+                                                <a href="{% url 'myblog:blogdetails' editors_pick.4.pk %}">
                                                     {{editors_pick.4.blog_title}}
                                                 </a>
                                             </h6>
@@ -306,7 +304,7 @@
                                     </h4>
                                     <ul class="meta list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a href="#">Techie Coder</a>
+                                            <a href="#">Sanskar Dongol</a>
                                         </li>
                                         <li class="list-inline-item">03 Jun 2021</li>
                                     </ul>
@@ -327,7 +325,7 @@
                                     </h4>
                                     <ul class="meta list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a href="#">Techie Coder</a>
+                                            <a href="#">Sanskar Dongol</a>
                                         </li>
                                         <li class="list-inline-item">02 Jun 2021</li>
                                     </ul>
@@ -348,7 +346,7 @@
                                     </h4>
                                     <ul class="meta list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a href="#">Techie Coder</a>
+                                            <a href="#">Sanskar Dongol</a>
                                         </li>
                                         <li class="list-inline-item">01 Jun 2021</li>
                                     </ul>
@@ -440,7 +438,9 @@
 
                         {% endfor %}
                         <div class="text-center">
+                          <a href="{% url 'myblog:blogs'%}">
                             <button class="btn btn-simple">Load More</button>
+                          </a>
                         </div>
                         <!-- left part over here  -->
                     </div>
@@ -577,7 +577,6 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
 
@@ -598,8 +597,6 @@
             </li>
         </ul>
     </div>
-
-
 
 
 

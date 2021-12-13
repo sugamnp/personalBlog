@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 from datetime import datetime,date,timedelta
 
@@ -17,6 +17,7 @@ def home(request):
         pass
 
     stuff_for_frontend = {
+                'featured_blog':featured_blog,
                 'featured_blog_title':featured_blog_title,
                 'featured_blog_writer':featured_blog_writer,
                 'featured_blog_image':featured_blog_image,
@@ -28,10 +29,20 @@ def home(request):
     return render(request, 'base.html',stuff_for_frontend)
 
 def blogs(request):
-    return render(request, 'myblog/blogdetails.html')
+    all_blogs = Post.objects.filter()
+    all_blogs = all_blogs[::-1]
+    stuff_for_frontend = {
+        'all_blogs':all_blogs,
+    }
+
+    return render(request,'myblog/blog.html',stuff_for_frontend)
+
+def blogdetails(request, blog_id):
+    blog = get_object_or_404(Post, pk=blog_id)
+    stuff_for_frontend = {
+            'blog':blog,
+    }
+    return render(request,'myblog/blogdetails.html', stuff_for_frontend)
 
 def aboutus(request):
-    return render(request, 'myblog/blogdetails.html')
-
-def contact(request):
-    return render(request, 'myblog/contact.html')
+    return render(request, 'myblog/aboutus.html')

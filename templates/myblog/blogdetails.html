@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<div class="container">
+<div class="widget rounded">
+    <div class="widget-about text-center">
+        <h3 class="widget-title">{{blog.blog_title}}</h3>
+        <div class="spacer" data-height="50"></div>
+        <p class="mb-4" style="text-align: justify;">{{blog.blog_body}}</p>
+        <ul class="social-icons list-unstyled list-inline mb-0">
+            <li class="list-inline-item">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
 
 {% endblock %}

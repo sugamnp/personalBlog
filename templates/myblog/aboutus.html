@@ -1,5 +1,62 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
+<div class="container col-lg-12 col-sm-6">
+        <div class="widget rounded">
+            <div class="widget-about text-center">
+                <h3 class="widget-title">Our team</h3>
+                <div class="spacer" data-height="50"></div>
+                <div class="row post-carousel-twoCol post-carousel">
+                    <div class="post post-over-content col-lg-12 col-sm-6">
+                        <div class="details clearfix">
+                            <h4 class="post-title">
+                                <a href="#">Sanskar Singh Dongol</a>
+                            </h4>
+
+                        </div>
+                            <div class="thumb rounded">
+                                <div class="inner">
+                                    <img src="{% static 'images/posts/sanska1.jpg' %}" alt="">
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="post post-over-content col-md-6">
+                        <div class="details clearfix">
+                            <h4 class="post-title">
+                                <a href="#">Sugam Neupane</a>
+                            </h4>
+                        </div>
+                            <div class="thumb rounded">
+                                <div class="inner">
+                                    <img src="{% static 'images/posts/suga1.jpg' %}" alt="">
+                                </div>
+                            </div>
+
+                    </div>
+
+                </div>
+
+                <div class="spacer" data-height="50"></div>
+
+                <ul class="social-icons list-unstyled list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
 
 {% endblock %}
